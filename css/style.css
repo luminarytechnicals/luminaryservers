@@ -792,3 +792,48 @@ body {
         padding: 10px;
     }
 }
+
+.live-feed {
+    width: 90%;
+    /* Same as dashboard sections */
+    max-width: 600px;
+    /* Optional max width to match config-section */
+    max-height: 200px;
+    /* Adjust height as needed */
+    background: rgba(0, 20, 40, 0.8);
+    border: 1px solid var(--main-glow-color);
+    border-radius: 8px;
+    padding: 15px;
+    /* Same padding as .config-section */
+    margin: 20px 0;
+    /* Vertical spacing like other sections */
+    overflow-y: auto;
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: var(--main-glow-color);
+    box-shadow: 0 0 10px var(--main-glow-color);
+}
+
+/* Scrollbar styling */
+.live-feed::-webkit-scrollbar {
+    width: 6px;
+}
+
+.live-feed::-webkit-scrollbar-thumb {
+    background: var(--main-glow-color);
+    border-radius: 3px;
+}
+
+.live-feed::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .live-feed {
+        width: 95%;
+        /* same responsive width as other sections */
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+}
