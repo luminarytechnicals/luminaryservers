@@ -1,0 +1,55 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="robot-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <linearGradient id="armor-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#e0e0e0;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#808080;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+
+    <g id="robot" filter="url(#robot-glow)">
+        <!-- Floating Animation Wrapper -->
+        <g>
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-10; 0,0" dur="4s" repeatCount="indefinite"/>
+            
+            <!-- Head -->
+            <path d="M110 80 L190 80 L200 130 L100 130 Z" fill="url(#armor-grad)" stroke="#00f3ff" stroke-width="2"/>
+            <!-- Eyes / Visor -->
+            <rect x="120" y="100" width="60" height="10" rx="2" fill="#000" stroke="#00f3ff" stroke-width="1"/>
+            <rect x="125" y="102" width="50" height="6" rx="1" fill="#00f3ff" class="eye-glow">
+                <animate attributeName="opacity" values="0.5;1;0.5" dur="0.5s" repeatCount="indefinite"/>
+            </rect>
+
+            <!-- Body -->
+            <path d="M90 140 L210 140 L220 220 L80 220 Z" fill="url(#armor-grad)" stroke="#00f3ff" stroke-width="2"/>
+            
+            <!-- Core Reactor -->
+            <circle cx="150" cy="170" r="15" fill="#000" stroke="#00f3ff" stroke-width="2"/>
+            <circle cx="150" cy="170" r="10" fill="#00f3ff">
+                <animate attributeName="r" values="10;12;10" dur="1s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.8;1;0.8" dur="0.2s" repeatCount="indefinite"/>
+            </circle>
+
+            <!-- Arms -->
+            <rect x="60" y="150" width="20" height="80" rx="5" fill="url(#armor-grad)" stroke="#00f3ff" stroke-width="1"/>
+            <rect x="220" y="150" width="20" height="80" rx="5" fill="url(#armor-grad)" stroke="#00f3ff" stroke-width="1"/>
+
+            <!-- Holographic Interface (Hands) -->
+            <path d="M50 240 L250 240 L230 280 L70 280 Z" fill="none" stroke="#00f3ff" stroke-width="1" stroke-dasharray="5 5" opacity="0.6">
+                 <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="2s" repeatCount="indefinite" additive="sum"/>
+            </path>
+            
+            <!-- Scanning Line -->
+            <line x1="50" y1="240" x2="250" y2="240" stroke="#00f3ff" stroke-width="2" opacity="0.8">
+                <animate attributeName="y1" values="240;280;240" dur="2s" repeatCount="indefinite"/>
+                <animate attributeName="y2" values="240;280;240" dur="2s" repeatCount="indefinite"/>
+            </line>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,47 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <linearGradient id="metal-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#00f3ff;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#0066ff;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    
+    <g id="main-gear" filter="url(#glow)">
+        <!-- Outer Ring -->
+        <circle cx="150" cy="150" r="140" fill="none" stroke="url(#metal-grad)" stroke-width="4" stroke-dasharray="20 10" opacity="0.5">
+            <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150" dur="20s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- Main Gear Body -->
+        <path fill="none" stroke="url(#metal-grad)" stroke-width="8" d="M150 30 L160 10 L190 10 L200 30 A 120 120 0 0 1 235 45 L260 35 L280 55 L270 80 A 120 120 0 0 1 285 115 L305 125 L305 155 L285 165 A 120 120 0 0 1 270 200 L280 225 L260 245 L235 235 A 120 120 0 0 1 200 250 L190 270 L160 270 L150 250 A 120 120 0 0 1 115 235 L90 245 L70 225 L80 200 A 120 120 0 0 1 65 165 L45 155 L45 125 L65 115 A 120 120 0 0 1 80 80 L70 55 L90 35 L115 45 A 120 120 0 0 1 150 30 Z">
+            <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150" dur="10s" repeatCount="indefinite"/>
+        </path>
+        
+        <!-- Inner Detail -->
+        <circle cx="150" cy="150" r="80" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.8">
+             <animate attributeName="r" values="80;82;80" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        
+        <!-- Center Hub -->
+        <circle cx="150" cy="150" r="40" fill="none" stroke="url(#metal-grad)" stroke-width="5" />
+        <circle cx="150" cy="150" r="20" fill="#00f3ff" opacity="0.3">
+            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="1s" repeatCount="indefinite"/>
+        </circle>
+        
+        <!-- Spokes -->
+        <g stroke="url(#metal-grad)" stroke-width="4">
+            <line x1="150" y1="110" x2="150" y2="70" />
+            <line x1="150" y1="190" x2="150" y2="230" />
+            <line x1="110" y1="150" x2="70" y2="150" />
+            <line x1="190" y1="150" x2="230" y2="150" />
+            <animateTransform attributeName="transform" type="rotate" from="360 150 150" to="0 150 150" dur="10s" repeatCount="indefinite"/>
+        </g>
+    </g>
+</svg>
