@@ -1,5 +1,5 @@
 {
-    "name": "Luminary Server Status - Real-Time Monitoring",
+    "name": "Luminary Servers",
     "short_name": "Luminary",
     "description": "Monitor your server infrastructure in real-time with beautiful visualizations and live metrics",
     "start_url": "./index.html",
