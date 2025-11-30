@@ -1,10 +1,10 @@
 /**
  * Centralized Configuration
- * Controls system status, animation speeds, and mock data.
+ * Controls STATUS, animation speeds, and mock data.
  */
 
 window.CONFIG = {
-    // System Status: 'ACTIVE', 'FAILURE', 'PARTIAL', 'SERVICE'
+    // STATUS: 'ACTIVE', 'FAILURE', 'PARTIAL', 'SERVICE'
     STATUS: 'SERVICE',
 
     // Centralized Color Definitions

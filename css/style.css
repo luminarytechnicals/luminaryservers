@@ -719,3 +719,57 @@ button:hover {
         font-family: monospace;
     }
 }
+
+#dashboard-view {
+    width: 100%;
+    height: auto !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding-bottom: 70px;
+    /* for safe area */
+    margin-top: 10px;
+}
+
+#dashboard-view * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+@media (max-width: 500px) {
+    .metrics-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        width: 100% !important;
+        padding: 0 10px !important;
+    }
+
+    .metric-card {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+}
+
+
+.server-node-map {
+    transform: translate(-50%, -20px) scale(0.7);
+    max-width: 100%;
+    overflow: hidden;
+}
+
+@media (max-width: 350px) {
+    .server-node-map {
+        transform: translate(-50%, -10px) scale(0.55);
+    }
+}
+
+.swipe-control {
+    bottom: 20px !important;
+    padding: 10px 20px !important;
+    transform: none !important;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}

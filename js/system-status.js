@@ -1,5 +1,5 @@
 /**
- * System Status Manager
+ * STATUS Manager
  * Handles the state of the server monitor and updates CSS variables.
  */
 
@@ -7,14 +7,14 @@ const SystemStatus = {
     currentStatus: 'ACTIVE',
 
     init() {
-        console.log('System Status Initialized');
+        console.log('STATUS Initialized');
         this.startMonitoring();
     },
 
     setStatus(status) {
         if (window.CONFIG.COLORS[status] && this.currentStatus !== status) {
             this.currentStatus = status;
-            console.log(`System Status Changed: ${this.currentStatus}`);
+            console.log(`STATUS Changed: ${this.currentStatus}`);
             this.applyTheme(status);
         }
     },
@@ -38,7 +38,7 @@ const SystemStatus = {
         // Update Status Text
         const statusText = document.getElementById('status-text');
         if (statusText) {
-            statusText.innerText = `SYSTEM STATUS: ${status}`;
+            statusText.innerText = `STATUS: ${status}`;
         }
     },
 

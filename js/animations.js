@@ -1,6 +1,6 @@
 /**
  * Animation Controller
- * Handles visual updates based on system status.
+ * Handles visual updates based on STATUS.
  */
 
 const Animations = {
@@ -37,7 +37,7 @@ const Animations = {
 
         // Update text
         if (this.elements.statusText) {
-            this.elements.statusText.innerText = `SYSTEM STATUS: ${status}`;
+            this.elements.statusText.innerText = `STATUS: ${status}`;
         }
 
         // Trigger specific animations
