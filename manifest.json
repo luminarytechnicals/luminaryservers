@@ -1,0 +1,31 @@
+{
+    "name": "Luminary Server Status - Real-Time Monitoring",
+    "short_name": "Luminary",
+    "description": "Monitor your server infrastructure in real-time with beautiful visualizations and live metrics",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#050505",
+    "theme_color": "#00f3ff",
+    "orientation": "portrait-primary",
+    "scope": "./",
+    "icons": [
+        {
+            "src": "assets/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": [
+        "productivity",
+        "utilities",
+        "developer tools"
+    ],
+    "screenshots": []
+}

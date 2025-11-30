@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Primary Meta Tags -->
+    <title>Luminary Server Status - Real-Time Server Monitoring Dashboard</title>
+    <meta name="title" content="Luminary Server Status - Real-Time Server Monitoring Dashboard">
+    <meta name="description"
+        content="Monitor your server infrastructure in real-time with Luminary's futuristic dashboard. Track CPU, memory, node status, and system metrics with live updates and beautiful visualizations.">
+    <meta name="keywords"
+        content="server monitoring, server status, real-time dashboard, system monitoring, infrastructure monitoring, server metrics, uptime monitoring, DevOps dashboard">
+    <meta name="author" content="Luminary Technologies">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:title" content="Luminary Server Status - Real-Time Server Monitoring Dashboard">
+    <meta property="og:description"
+        content="Monitor your server infrastructure in real-time with Luminary's futuristic dashboard. Track CPU, memory, node status, and system metrics with live updates.">
+    <meta property="og:image" content="https://yourdomain.com/assets/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourdomain.com/">
+    <meta property="twitter:title" content="Luminary Server Status - Real-Time Server Monitoring Dashboard">
+    <meta property="twitter:description"
+        content="Monitor your server infrastructure in real-time with Luminary's futuristic dashboard. Track CPU, memory, node status, and system metrics with live updates.">
+    <meta property="twitter:image" content="https://yourdomain.com/assets/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+    <!-- PWA -->
+    <meta name="theme-color" content="#00f3ff">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Luminary">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <canvas id="particle-canvas"></canvas>
+    <div class="scanline"></div>
+    <div class="vignette"></div>
+    <div class="data-stream"></div>
+    <div class="data-stream"></div>
+    <div class="data-stream"></div>
+    <div class="data-stream"></div>
+
+    <!-- Home View -->
+    <section id="home-view" class="view active">
+        <div class="center-stage">
+            <div class="gear-container">
+                <svg id="gear-logo" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="4" result="coloredBlur" />
+                            <feMerge>
+                                <feMergeNode in="coloredBlur" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                        <linearGradient id="metal-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:var(--main-glow-color);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#0066ff;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+
+                    <g id="main-gear" filter="url(#glow)">
+                        <!-- Outer Ring -->
+                        <circle cx="150" cy="150" r="140" fill="none" stroke="url(#metal-grad)" stroke-width="4"
+                            stroke-dasharray="20 10" opacity="0.5">
+                            <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150"
+                                dur="20s" repeatCount="indefinite" />
+                        </circle>
+
+                        <!-- Main Gear Body -->
+                        <path fill="none" stroke="url(#metal-grad)" stroke-width="8"
+                            d="M150 30 L160 10 L190 10 L200 30 A 120 120 0 0 1 235 45 L260 35 L280 55 L270 80 A 120 120 0 0 1 285 115 L305 125 L305 155 L285 165 A 120 120 0 0 1 270 200 L280 225 L260 245 L235 235 A 120 120 0 0 1 200 250 L190 270 L160 270 L150 250 A 120 120 0 0 1 115 235 L90 245 L70 225 L80 200 A 120 120 0 0 1 65 165 L45 155 L45 125 L65 115 A 120 120 0 0 1 80 80 L70 55 L90 35 L115 45 A 120 120 0 0 1 150 30 Z">
+                            <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150"
+                                dur="10s" repeatCount="indefinite" />
+                        </path>
+
+                        <!-- Spokes -->
+                        <g stroke="url(#metal-grad)" stroke-width="4">
+                            <line x1="150" y1="110" x2="150" y2="70" />
+                            <line x1="150" y1="190" x2="150" y2="230" />
+                            <line x1="110" y1="150" x2="70" y2="150" />
+                            <line x1="190" y1="150" x2="230" y2="150" />
+                            <animateTransform attributeName="transform" type="rotate" from="360 150 150" to="0 150 150"
+                                dur="10s" repeatCount="indefinite" />
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="robot-container">
+                <svg id="robot-avatar" width="300" height="300" viewBox="0 0 300 300"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <filter id="robot-glow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                            <feMerge>
+                                <feMergeNode in="coloredBlur" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                        <linearGradient id="armor-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#e0e0e0;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#808080;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+
+                    <g id="robot" filter="url(#robot-glow)">
+                        <g>
+                            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-10; 0,0"
+                                dur="4s" repeatCount="indefinite" />
+                            <path d="M110 80 L190 80 L200 130 L100 130 Z" fill="url(#armor-grad)"
+                                stroke="var(--main-glow-color)" stroke-width="2" />
+                            <rect x="120" y="100" width="60" height="10" rx="2" fill="#000"
+                                stroke="var(--main-glow-color)" stroke-width="1" />
+                            <rect x="125" y="102" width="50" height="6" rx="1" fill="var(--main-glow-color)"
+                                class="eye-glow">
+                                <animate attributeName="opacity" values="0.5;1;0.5" dur="0.5s"
+                                    repeatCount="indefinite" />
+                            </rect>
+                            <path d="M90 140 L210 140 L220 220 L80 220 Z" fill="url(#armor-grad)"
+                                stroke="var(--main-glow-color)" stroke-width="2" />
+                            <circle cx="150" cy="170" r="15" fill="#000" stroke="var(--main-glow-color)"
+                                stroke-width="2" />
+                            <circle cx="150" cy="170" r="10" fill="var(--main-glow-color)">
+                                <animate attributeName="r" values="10;12;10" dur="1s" repeatCount="indefinite" />
+                                <animate attributeName="opacity" values="0.8;1;0.8" dur="0.2s"
+                                    repeatCount="indefinite" />
+                            </circle>
+                            <rect x="60" y="150" width="20" height="80" rx="5" fill="url(#armor-grad)"
+                                stroke="var(--main-glow-color)" stroke-width="1" />
+                            <rect x="220" y="150" width="20" height="80" rx="5" fill="url(#armor-grad)"
+                                stroke="var(--main-glow-color)" stroke-width="1" />
+                            <path d="M50 240 L250 240 L230 280 L70 280 Z" fill="none" stroke="var(--main-glow-color)"
+                                stroke-width="1" stroke-dasharray="5 5" opacity="0.6">
+                                <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="2s"
+                                    repeatCount="indefinite" additive="sum" />
+                            </path>
+                            <line x1="50" y1="240" x2="250" y2="240" stroke="var(--main-glow-color)" stroke-width="2"
+                                opacity="0.8">
+                                <animate attributeName="y1" values="240;280;240" dur="2s" repeatCount="indefinite" />
+                                <animate attributeName="y2" values="240;280;240" dur="2s" repeatCount="indefinite" />
+                            </line>
+                        </g>
+                    </g>
+                </svg>
+                <div class="hologram-rings"></div>
+                <div class="hologram-bars"></div>
+            </div>
+            <div class="electric-spark">
+                <div class="spark-line"></div>
+                <div class="spark-line"></div>
+                <div class="spark-line"></div>
+            </div>
+        </div>
+
+        <div class="status-display">
+            <h1 id="status-text">SYSTEM STATUS: INITIALIZING</h1>
+            <div class="server-node-map">
+                <div class="node" style="--i:1">API</div>
+                <div class="node" style="--i:2">DEV</div>
+                <div class="node" style="--i:3">NET</div>
+                <div class="node" style="--i:4">AI</div>
+                <div class="node" style="--i:5">SEC</div>
+                <div class="node" style="--i:6">OPS</div>
+            </div>
+        </div>
+
+        <div class="swipe-control" id="swipe-btn">
+            <div class="swipe-arrow"></div>
+            <span>SWIPE TO DASHBOARD</span>
+        </div>
+    </section>
+
+    <!-- Dashboard View -->
+    <section id="dashboard-view" class="view">
+        <div class="dashboard-header">
+            <h2>SYSTEM METRICS</h2>
+            <button id="back-btn">BACK</button>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <h3>CPU LOAD</h3>
+                <div class="bar-chart" id="cpu-chart"></div>
+            </div>
+            <div class="metric-card">
+                <h3>MEMORY</h3>
+                <div class="wave-chart" id="mem-chart"></div>
+            </div>
+            <div class="metric-card full-width">
+                <h3>SERVER INFO</h3>
+                <div id="server-description"
+                    style="font-size: 0.85rem; line-height: 1.6; color: rgba(255,255,255,0.8); padding: 5px 0;">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+            <div class="metric-card full-width">
+                <h3>SERVER NODES</h3>
+                <div class="server-list-container">
+                    <table class="server-table">
+                        <thead>
+                            <tr>
+                                <th>Node</th>
+                                <th>Load</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="server-table-body">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="config-section">
+            <h3>SYSTEM CONFIGURATION</h3>
+            <div class="config-grid" id="config-grid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <div class="live-feed">
+            <h3>LIVE FEED</h3>
+            <ul id="log-list">
+                <li>System Initialized...</li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="js/config.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/system-status.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/pwa.js"></script>
+    <script>
+        // Simple View Switcher Logic
+        const homeView = document.getElementById('home-view');
+        const dashView = document.getElementById('dashboard-view');
+        const swipeBtn = document.getElementById('swipe-btn');
+        const backBtn = document.getElementById('back-btn');
+
+        if (swipeBtn && backBtn) {
+            swipeBtn.addEventListener('click', () => {
+                homeView.classList.remove('active');
+                dashView.classList.add('active');
+            });
+
+            backBtn.addEventListener('click', () => {
+                dashView.classList.remove('active');
+                homeView.classList.add('active');
+            });
+        }
+    </script>
+</body>
+
+</html>
