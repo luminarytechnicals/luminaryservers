@@ -273,7 +273,7 @@ body {
 to {
     transform: rotate(360deg);
 }
-}
+
 
 @keyframes spin-reverse {
     from {
@@ -434,8 +434,6 @@ button:hover {
     0% {
         transform: translateY(-100%);
     }
-
-    grid-column: span 2;
 }
 
 .server-list {
@@ -720,3 +718,4 @@ button:hover {
         color: var(--main-glow-color);
         font-family: monospace;
     }
+}
