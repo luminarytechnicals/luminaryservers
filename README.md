@@ -50,8 +50,8 @@ Luminary Server Status is a beautiful, futuristic web-based dashboard for monito
 
 1. **Clone or download** the repository:
    ```bash
-   git clone https://github.com/yourusername/luminary-servers.git
-   cd luminary-servers
+   git clone https://github.com/luminarytechnicals/luminaryservers.git
+   cd luminaryservers
    ```
 
 2. **Serve locally** (choose one):
@@ -97,11 +97,10 @@ Luminary Servers/
 │   └── pwa.js              # PWA initialization
 │
 └── assets/
-    ├── icon-512x512.png    # Large PWA icon
-    ├── icon-192x192.png    # Medium PWA icon
-    ├── favicon-32x32.png   # Browser favicon
-    ├── favicon-16x16.png   # Small favicon
-    └── apple-touch-icon.png # iOS home screen icon
+    ├── gear.svg            # Gear Animation
+    ├── icon-192x192.png    # Logo
+    ├── titlogo.png         # Main Logo
+    └── robot.svg           # Robot Animation
 ```
 
 ## ⚙️ Configuration
@@ -284,4 +283,5 @@ For support, email support@luminary.dev or open an issue in the repository.
 
 ---
 
-**Made with ❤️ by Luminary Technologies**
+**Made with ❤️ by Luminary Technicals**
+
