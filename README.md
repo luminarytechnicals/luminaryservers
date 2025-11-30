@@ -108,7 +108,7 @@ Luminary Servers/
 
 All settings are centralized in `js/config.js` for easy customization:
 
-### Change System Status
+### Change STATUS
 ```javascript
 window.CONFIG = {
     STATUS: 'ACTIVE'  // Options: 'ACTIVE', 'FAILURE', 'PARTIAL', 'SERVICE'
@@ -144,7 +144,7 @@ ANIMATION: {
 ## 🎯 Usage
 
 ### Navigation
-1. **Home View**: Displays animated gear/robot and system status
+1. **Home View**: Displays animated gear/robot and STATUS
 2. **Dashboard View**: Shows detailed metrics and server information
 3. **Swipe Control**: Click "SWIPE TO DASHBOARD" to switch views
 4. **Back Button**: Return to home view from dashboard
