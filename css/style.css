@@ -773,3 +773,22 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
 }
+
+.config-section {
+    width: 90%;
+    max-width: 600px;
+    background: var(--panel-bg);
+    border: 1px solid var(--main-glow-color);
+    padding: 15px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    margin-top: 20px;
+}
+
+/* Optional: mobile tweaks */
+@media (max-width: 600px) {
+    .config-section {
+        width: 95%;
+        padding: 10px;
+    }
+}
