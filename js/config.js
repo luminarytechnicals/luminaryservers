@@ -5,7 +5,7 @@
 
 window.CONFIG = {
     // STATUS: 'ACTIVE', 'FAILURE', 'PARTIAL', 'SERVICE'
-    STATUS: 'FAILURE',
+    STATUS: 'PARTIAL',
 
     // Centralized Color Definitions
     COLORS: {
@@ -47,4 +47,5 @@ window.CONFIG = {
         ]
     }
 };
+
 
