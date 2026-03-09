@@ -5,7 +5,7 @@
 
 window.CONFIG = {
     // STATUS: 'ACTIVE', 'FAILURE', 'PARTIAL', 'SERVICE'
-    STATUS: 'FAILURE',
+    STATUS: 'SERVICE',
 
     // Centralized Color Definitions
     COLORS: {
@@ -28,11 +28,11 @@ window.CONFIG = {
     // Mock Data Configuration
     DATA: {
         CPU_LOAD: 45, // %
-        MEMORY_USAGE: 60, // %
-        ACTIVE_NODES: 12,
-        TEMPERATURE: 42, // Celsius
-        NETWORK_THROUGHPUT: 850, // Mbps
-        DISK_USAGE: 72, // %
+        MEMORY_USAGE: 12, // %
+        ACTIVE_NODES: 78,
+        TEMPERATURE: 46, // Celsius
+        NETWORK_THROUGHPUT: 1987, // Mbps
+        DISK_USAGE: 34, // %
         SERVER_DESCRIPTION: 'CURRENT: All systems operational. ACTIVE: Monitoring enabled. SOON: Maintenance scheduled for 02:00 UTC.',
         SERVERS: [
             { name: 'Backend', load: 67, status: 'ACTIVE' },
@@ -47,6 +47,7 @@ window.CONFIG = {
         ]
     }
 };
+
 
 
 
